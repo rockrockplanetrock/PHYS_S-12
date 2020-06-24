@@ -1,6 +1,6 @@
 body {
   background-color: yellow;
-    font: 20px Montserrat, sans-serif;
+    font-family: 'Major Mono';font-size: 22px;
     line-height: 1.8;
     color: black;
   }
@@ -26,3 +26,11 @@ p {
   border: 10px;
   border-radius: 5px;
 }
+
+<style>
+body {
+    
+}
+</style>
+</head>
+<body>
