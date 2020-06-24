@@ -1,5 +1,4 @@
 body {
-body {
 	background-color: yellow;
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
@@ -13,7 +12,6 @@ p {font-size: 16px;}
   padding: 30px;
   padding-bottom: 70px;
 }
-
 
 /* unvisited link */
 a:link {
