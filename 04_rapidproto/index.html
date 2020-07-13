@@ -11,8 +11,18 @@
 </head>
 <body>
 
+
+<h3>Class 4: Rapid Prototyping </h3> <br> 
+
+<p>Stuff AND THINGS</p>
+
+<iframe width="640" height="480" src="petthedog.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="handsydog.mp4" 
+frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="highfivemill.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="demo.mp4" frameborder="0" allowfullscreen></iframe>
 <div class="container-fluid">
-  <h3>Week 1: Introduction </h3> <br> 
+  
   <div class="row">
     
       <div class="col-md-4">
@@ -43,9 +53,72 @@
  
   Assignment:
 Make and document either (a) a kinetic sculpture or (b) a quick prototype of a possible final project. This should integrate an electronic circuit with physical components. In addition to components in the kit, feel free to use materials you find around the house (cardboard, toothpicks, coat hangers, tape and glue, etc.).
+<iframe width="640" height="480" src="heart.mp4" frameborder="0" allowfullscreen></iframe>
+two H bridges on mini boards allows for 2 motors
+allows you to switch the direction of the current
 
   
 </div>
 
 </body>
 </html>
+
+
+
+CODE IS BELOW
+
+/*
+ * This is a custom function to drive Motor A
+ * inputs: direction (L/R), duration (int) 
+ * outputs: motor control
+ */
+void motorA(char d, int t) {
+  if(d =='R'){
+    digitalWrite(A1B, HIGH); 
+  } else if (d =='L'){
+    digitalWrite(A1B, LOW);    
+  }
+
+  digitalWrite(A1A, HIGH);  // turn motor ON
+  delay(t); // allow motor to run for specified time
+ 
+  digitalWrite(A1A, LOW); // turn motor OFF
+  digitalWrite(A1B, LOW);    
+}
+Then we can call this function from our main loop() function. Putting it all together looks like this:
+
+
+const int A1A = 3;  // define pin 3 for A-1A
+const int A1B = 4;  // define pin 4 for A-1B
+
+void setup() {
+  pinMode(A1A, OUTPUT); // specify these pins as outputs
+  pinMode(A1B, OUTPUT);    
+}
+
+void loop() {
+  motorA('L', 2000);  // turn left for 2 seconds
+  delay(1000);      // delay for 1 second
+  motorA('R', 2000);  // turn right for 2 seconds
+  delay(1000);      // delay for 1 second
+}
+
+
+/*
+ * This is a custom function to drive Motor A
+ * inputs: direction (L/R), duration (int) 
+ * outputs: motor control
+ */
+void motorA(char d, int t) {
+  if(d =='R'){
+    digitalWrite(A1B, HIGH); 
+  } else if (d =='L'){
+    digitalWrite(A1B, LOW);    
+  }
+
+  digitalWrite(A1A, HIGH);  // turn motor ON
+  delay(t); // allow motor to run for specified time
+ 
+  digitalWrite(A1A, LOW); // turn motor OFF
+  digitalWrite(A1B, LOW);    
+}
