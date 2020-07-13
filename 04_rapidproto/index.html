@@ -46,55 +46,11 @@
 <p>Stuff AND THINGS, we worked on this:</p>
 
 <h3>Kinetic Sculpture</h3> <br> 
-<iframe width="640" height="480" src="petthedog.mp4" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="640" height="480" src="highfivemill.mp4" frameborder="0" allowfullscreen></iframe>
+<p>I was inspired and amused by the tiny plastic hands I keep finding around my studio and decided to implement them for my kinetic sculpture. Using a Polou 6V brushed DC micromotor and a potentiometer with my Adafruit Metro board, I created the<b>High Five Mill</b> for all of one's needs for validation. First, I got a <i>hand</i>-le on my circuit using one hand on the motor and another on the potentiometer knob (just for fun). I used this dog statue to assess how well I could pet a target.  
+<iframe width="640" height="480" src="petthedog.mp4" frameborder="0" allowfullscreen></iframe> </p>
 
-<div class="container-fluid">
-  
-  <div class="row">
-    
-      <div class="col-md-4">
-        <p> Here is an image: </p>
-
-        <img src="./sew.png" class="img-responsive margin" style="width:100%" alt="Sew">
-
-        <p> And here is a <a href='../index.html'>link</a>. </p>
-      </div >
-     
-      <div class="col-md-4">
-        <p> Here is a video embedded with the iframe tag: </p> 
-   
-        <iframe style="width:100%; height:300px" src="https://www.youtube.com/embed/z-6idke_hVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-
-      <div class="col-md-4">
-        <p> Here is a column with an mp4 video. </p> 
-   
-        <video controls>
-          <source width="320" height="240" src="demo.mp4" type="video/mp4">
-        </video>
-      </div>
-
-
-  </div>
-
- 
-  Assignment:
-Make and document either (a) a kinetic sculpture or (b) a quick prototype of a possible final project. This should integrate an electronic circuit with physical components. In addition to components in the kit, feel free to use materials you find around the house (cardboard, toothpicks, coat hangers, tape and glue, etc.).
-<iframe width="640" height="480" src="heart.mp4" frameborder="0" allowfullscreen></iframe>
-two H bridges on mini boards allows for 2 motors
-allows you to switch the direction of the current
-
-  
-</div>
-
-</body>
-</html>
-
-
-
-CODE IS BELOW
+<p>Here's the associated Arduino program for this motor circuit.
 <pre><code class="language-arduino">
 /*
  * This is a custom function to drive Motor A
@@ -152,3 +108,25 @@ void motorA(char d, int t) {
   digitalWrite(A1B, LOW);    
 }
 </code></pre>
+
+</p>
+
+<p> Then, I used flexible aluminum wire to create spokes for the hands, which then would be attached to the motor in the center. I created a structural foundtion for the windmill-like sculpture with some cardboard, fed the motor wires through the tube, and then covered everything in electrical tape for a smoother appearance. 
+<img src="./handmillguts.jpg">
+<img src="handmill.jpg">
+<iframe width="640" height="480" src="highfivemill.mp4" frameborder="0" allowfullscreen></iframe>
+
+
+
+  </div>
+
+ 
+  Assignment:
+Make and document either (a) a kinetic sculpture or (b) a quick prototype of a possible final project. This should integrate an electronic circuit with physical components. In addition to components in the kit, feel free to use materials you find around the house (cardboard, toothpicks, coat hangers, tape and glue, etc.).
+
+
+  
+</div>
+
+</body>
+</html>
