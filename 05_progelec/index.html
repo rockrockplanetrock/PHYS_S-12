@@ -44,19 +44,61 @@
 
 <p> 
 <h3>Programming an Input and Output on a Microcontroller</h3>
-<p>Blah blah blah, why did my computer die midway through making my button circuit?</p>
+<p>It was super frustrating that my computer died midway through making my button circuit, but I managed to get an iteration back in working order. I also found that switching out push buttons fixed my issues. </p>
 
+<pre><code class="language-arduino">
+const int button1Pin = 2;  // pushbutton 1 pin
+const int button2Pin = 3;  // pushbutton 2 pin
+const int ledPin =  13;    // LED pin
+
+
+void setup()
+{
+  // Set up the pushbutton pins to be an input:
+  pinMode(button1Pin, INPUT);
+  pinMode(button2Pin, INPUT);
+
+  // Set up the LED pin to be an output:
+  pinMode(ledPin, OUTPUT);      
+}
+
+
+void loop()
+{
+  int button1State, button2State; 
+
+  button1State = digitalRead(button1Pin);
+  button2State = digitalRead(button2Pin);
+
+  /
+
+  if (((button1State == LOW) || (button2State == LOW))  
+      && !                                               
+      ((button1State == LOW) && (button2State == LOW)))
+                                                        
+  {
+    digitalWrite(ledPin, HIGH);  // turn the LED on
+  }
+  else
+  {
+    digitalWrite(ledPin, LOW);  // turn the LED off
+  }
+
+}
+</pre>
+</code>
+<img src="./conditionalblink.jpg" class="img-responsive margin" style="width:40%" alt="Conditional Blink Circuit">
 <h3>3D Modeling in Fusion360: Tutorial Time</h3>
 <p>I chose a video tutorial showing how to make a lamp shade and found that I finally was able to get a handle on Fusion360. While I fastidiously followed the tutorial, the video concluded with instructions on how to modify individual design steps post hoc, which turned out to be a complete game changer. Below you can see how my 3D model progressed and deviated.
 <div class="col-md-4">
-  <img src="./lamp1.png" class="img-responsive margin" style="width:100%" alt="Lamp 1>
+  <img src="./lamp1.png" class="img-responsive margin" style="width:100%" alt="Lamp 1">
   <img src="./lamp2.png" class="img-responsive margin" style="width:100%" alt="Lamp 2">
   <img src="./lamp3.png" class="img-responsive margin" style="width:100%" alt="Lamp 3">
   <img src="./lampgif.gif" class="img-responsive margin" style="width:100%" alt="Lamp GIF">
 </div>
 </p> 
 
-<h3>Contemplating 3D Models for the Final Project</h3>
+<h3>Contemplating 3D Models for the Final Project (X-Posted)</h3>
 <p>I have been pondering my design for the final project and how I wish to create moving spike projections a lot.  I decided to see if I could derive inspiration from others on <a href="https://www.thingiverse.com/">Thingiverse</a> and <a href="https://www.grabcad.com/"> GrabCad</a> by searching "spikes". I came across the following models, and it seems as though I'm going to have to ruminate on crystals and sea urchins to produce my design. I'm thinking that motion will be created from nitinol (muscle wire) or perhaps strings, but I need to sketch a little more to make sense of my design.
 
 <div class="col-md-4">
@@ -70,24 +112,6 @@
 
 
 
-
-________
-
-
-
-kova https://www.ceibasf.com/kova-unisex-3d-printed-condor-headdress/dp/16165
-
-mycomask https://www.core77.com/posts/36368/New-Directions-for-3D-Printing
-<p> Here is my circuit on Tinkercad, which I measured at two separate points (before and after the resistor).
-  <br>
-  <img src="./circuit1.png" class="img-responsive margin" style="width:80%" alt="Tinkerdcad Circuit 1">
-  <br>
-  <img src="./circuit2.png" class="img-responsive margin" style="width:80%" alt="Tinkercad Circuit 2"></p>
-
-
-
-  
-  
 </div>
 
 </body>
