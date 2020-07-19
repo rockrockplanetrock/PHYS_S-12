@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <title>PHYS S-12: Intro to Digital Fabrication </title>
@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
   <link href="../style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
 </head>
 <body>
 <style>
@@ -20,39 +26,81 @@
     text-align: center;
     width:100%;}
 </style>
-  <div class="container-fluid">
-  <h3>Week 1: Introduction </h3> <br> 
-  <div class="row">
-    
-      <div class="col-md-4">
-        <p> Here is an image: </p>
 
-        <img src="./sew.png" class="img-responsive margin" style="width:100%" alt="Sew">
-
-        <p> And here is a <a href='../index.html'>link</a>. </p>
-      </div >
-     
-      <div class="col-md-4">
-        <p> Here is a video embedded with the iframe tag: </p> 
-   
-        <iframe style="width:100%; height:300px" src="https://www.youtube.com/embed/z-6idke_hVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-
-      <div class="col-md-4">
-        <p> Here is a column with an mp4 video. </p> 
-   
-        <video controls>
-          <source width="320" height="240" src="demo.mp4" type="video/mp4">
-        </video>
-      </div>
+<body>
+<html lang="en">
+<head>
+  <title>PHYS S-12: Intro to Electronics </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+  <link href="../style.css" rel="stylesheet">
+  <h4>Class 7: Sensors</h4><br> 
+</head>
+</body>
 
 
-  </div>
+<h3>Input: Sensors</h3> <br> 
 
- 
-  
-  
-</div>
+<p>After class, I decided to try out the <a href="https://www.adafruit.com/product/3405?gclid=EAIaIQobChMIkOyy7orZ6gIVRdbACh3phQKgEAAYASAAEgKdXvD_BwE">Adafruit HUZZAH32 – ESP32 Feather Board</a> for my sensor tests rather than my reliable <a href="https://www.adafruit.com/product/3505">Adafruit METRO M0 Express</a>. While it took a few minutes to adapt, I think I can now say that I'm mostly comfortable switching between the two microcontrollers. </p>
+
+
+<h3>Assignment #1: Measure a Physical Quantity & Calibrate Sensor </h3>
+
+I chose <a href="https://www.digikey.com/product-detail/en/ALS-PT204-6C%2FL177/1080-1019-ND/2675510?WT.z_cid=ref_Globalspec_buynow">this phototransistor</a> as my sensor of choice. Specifically, this sensor is a "630nm radial phototransistor" for measuring visible light wavelengths (with peak sensitivity at 630nm). 
+
+I set up the circuit as shown using a slightly modified (75ms delay between reads) version of the default AnalogReadSerial program. I used a 1k and 10k Ohm for my first two attempts, but found that the sensor was hardly sensitive enough to measure for this exercise. Thus, I decided my calibration would implement a 330k Ohm resistor.
+<img src="./circuitmeasure.png" class="img-responsive margin" style="width:40%" alt="Circuit Measured">
+ After creating a light "shield" out of a post-it note, I used the flashlight on my cellphone to expose the phototransistor to measurable and variable light. Below are my measurements.  When plotting, I played with making the vertical axis scale logarithmic and linear.
+
+<img src="./tabchart.png" class="img-responsive margin" style="width:40%" alt="Tabulated Values">
+<img src="./330kohm.png" class="img-responsive margin" style="width:40%" alt="330k Ohm Graph 1">
+<img src="./330kohm2.png" class="img-responsive margin" style="width:40%" alt="330K Ohm Graph 2">
+
+<p>Afterwards, I tried a 10M Ohm resistor, but the baseline value without light was 500, so it was too sensitive to be useful.Given my findings, the output signal scale XXX; the relationship between light absorbed and serial monitor output was inverse. It ranged between 0 and 3110 and was most sensitive between 2-8"; I think the measurement is best conducted when the light source is 18" away from the sensor (or less). I attempted to use the map() function, but the results weren't helpful for plotting.</p>
+
+
+<h3>Assignment #2 DIY Sensor Construction + Calibration</h3>
+
+<p>First, I made a test sensor using velostat with two small pieces of copper tape adhered to each side of the velostat(without making contact). I attached alligator clips to the distal end of both copper pieces to connect one to GND and the other to A0. The analog pin A0 functioned here as a PULLUP because it sent out voltage. connected one to GND pieces of copperof the velostat with alligator clips connected to each. </p>
+
+<img src="https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15-barkh22g/_/rsrc/1470337933918/project-1-touchable-canvas/velostat-explorations/Zone%20Wiring.jpg">
+
+
+(Inspiration here: https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15-barkh22g/project-1-touchable-canvas/velostat-explorations)
+What I did.
+Conductive thread, felt, 
+My Measurements
+Making Sense of it
+
+
+
+<p>My Code:
+<pre><code class="language-arduino">
+const int analogInPin = A0;  
+
+// value read from the Velostat
+int sensorValue = 0;        
+
+void setup() {
+  // initialize serial communication
+  Serial.begin(9600);
+  digitalWrite(analogInPin, HIGH);
+
+}
+
+void loop() {
+  // read analog value
+  sensorValue = analogRead(analogInPin);
+
+  // print results
+  Serial.print("sensor = " );
+  Serial.println(sensorValue);
+}
+</code></pre></p>
+
 
 </body>
 </html>
