@@ -63,7 +63,7 @@ Before this fiasco, I was able to use the buzzer to first make noise, then play 
 <iframe width="640" height="480" src="steppermotorworks.mp4" frameborder="0" allowfullscreen></iframe>
 <h4>Advanced Application of the Stepper Motor</h4>
 
-<p> I decided to use a stronger stepper motor than I had used previously, which on first sight seemed more complicated internally. Specifically, I was using the <a href="https://www.omc-stepperonline.com/nema-17-bipolar-1-8deg-26ncm-36-8oz-in-0-4a-12v-42x42x34mm-4-wires.html">Nema 17 Bipolar Stepper Motor to be smooth moving and alternating directions based on a signal for my final project. The Galvanic Skin Conductance sensor from seeed is pretty neat, but needs work.
+<p> I decided to use a stronger stepper motor than I had used previously, which on first sight seemed more complicated internally. Specifically, I was using the <a href="https://www.omc-stepperonline.com/nema-17-bipolar-1-8deg-26ncm-36-8oz-in-0-4a-12v-42x42x34mm-4-wires.html">Nema 17 Bipolar Stepper Motor to be smooth moving and alternating directions based on a signal for my final project. I tried to incorporate the Galvanic Skin Conductance sensor from seeed, but needs work!
 
 <pre><code class="language-arduino">
 
@@ -92,6 +92,7 @@ void loop(){
 
   #include <Stepper.h>
 
+<pre><code class="language-arduino">
 const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
 // for your motor
 
