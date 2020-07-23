@@ -9,9 +9,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
   <link href="../style.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+<!-- Arduino Code CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+
+not sure what this is
   <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
@@ -23,8 +26,8 @@
   
   body {
     background-color: yellow;
-    text-align: center;
-    width:100%;}
+    text-align: left;
+      width:100%;}
 </style>
 
 <body>
@@ -42,53 +45,52 @@
 </body>
 
 
-<h3>Class 8: Output/h3> <br> 
+<h3>Class 8: Output<h3> <br> 
 
-<p>
-
-In class this week we played with a piezo disc/buzzer, LED strips, and just dipped our toes into stepper motors. I was particularly excited about stepper motors for my final project, but I hooked up a potentiometer incorrectly to an external power source and fried my board!
+<p>In class this week we played with a piezo disc/buzzer, LED strips, and just dipped our toes into stepper motors. I was particularly excited about stepper motors for my final project, but I hooked up a potentiometer incorrectly to an external power source and fried my board!
 
 Before this fiasco, I was able to use the buzzer to first make noise, then play a scale, and finally sync to an LED strip. Later on, I was excited about the possibilities of the piezo and uploaded <a href="https://github.com/lukecyca/TetrisThemeArduino/blob/master/TetrisThemeArduino.ino#L1">code from Github</a> for the Tetris theme song. Perhaps in the future I may create a Tetris game on an LED array?
-
-<pre><code class="language-arduino">
-
 
 <h3>Assignment: Choose an output device and operate it! </h3>
 
 <h4> Nitinol</h4>
-<p>First, I was overly ambitious and tried to use <a href="https://en.wikipedia.org/wiki/Nickel_titanium">nitinol</a>, also known as muscle wire as a potential programmable output. Unfortunately, I think the wire gauge was too thick to be reasonably pliable. I did get to set a conformation by heating up the metal to red hot (which is apparently 900F) and setting it by plunging it in cold water. From there, you can bend it and the form is reset with an applied voltage. Here's a few images from this journey. </p>
-
+<p>First, I was overly ambitious and tried to use <a href="https://en.wikipedia.org/wiki/Nickel_titanium">nitinol</a>, also known as muscle wire as a potential programmable output. Unfortunately, I think the wire gauge was too thick to be reasonably pliable. I did get to set a conformation by heating up the metal to red hot (which is apparently 900F) and setting it by plunging it in cold water. From there, you can bend it and the form is reset with an applied voltage. Here's a few images from this journey. 
 <img src="./nitinol.jpg" class="img-responsive margin" style="width:100%">
 <img src="./piezodisc.jpg" class="img-responsive margin" style="width:100%">
 <img srx="./LEDstrip_birds.GIF">
-<img src="/velosensor1.GIF">
+<img src="/velosensor1.GIF"> </p>
+
+
+
 <h4>Advanced Application of the Stepper Motor</h4>
 
 <p> I decided to use a stronger stepper motor than I had used previously, which on first sight seemed more complicated internally. Specifically, I was using the <a href="https://www.omc-stepperonline.com/nema-17-bipolar-1-8deg-26ncm-36-8oz-in-0-4a-12v-42x42x34mm-4-wires.html">Nema 17 Bipolar Stepper Motor to be smooth moving and alternating directions based on a signal for my final project. I tried to incorporate the Galvanic Skin Conductance sensor from seeed, but it needs a lot of work!
 <img src="./gsr_testing.GIF">
 
 <pre><code class="language-arduino">
-
-const int GSR=A0;
-int sensorValue=0;
-int gsr_average=0;
+  const int GSR=A0;
+  int sensorValue=0;
+  int gsr_average=0;
  
-void setup(){
-  Serial.begin(9600);
-}
- 
-void loop(){
-  long sum=0;
-  for(int i=0;i<10;i++)           //Average the 10 measurements to remove the glitch
-      {
-      sensorValue=analogRead(GSR);
-      sum += sensorValue;
-      delay(5);
-      }
-   gsr_average = sum/10;
-   Serial.println(gsr_average);
-}
+  void setup(){
+    Serial.begin(9600);
+  }
+   
+  void loop(){
+    long sum=0;
+    for(int i=0;i<10;i++)           //Average the 10 measurements to remove the glitch
+        {
+        sensorValue=analogRead(GSR);
+        sum += sensorValue;
+        delay(5);
+        }
+     gsr_average = sum/10;
+     Serial.println(gsr_average);
+  }
 </code></pre>
+
+
+
 <iframe width="640" height="480" src="gsr testing.mp4" frameborder="0" allowfullscreen></iframe>
  Assignment: Choose an output device you have not used before and program a microcontroller to operate it. 
 
