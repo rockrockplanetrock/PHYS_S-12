@@ -1,4 +1,10 @@
-body {
+.header {
+  background-color: black;
+  color: yellow;
+  text-align: center;
+  padding: 20px;
+}
+
   background-color: yellow;
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
