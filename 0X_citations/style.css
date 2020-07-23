@@ -1,0 +1,29 @@
+body {
+  background-color: yellow;
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: black;
+  }
+  
+p {font-size: 16px;}
+.margin {margin-bottom: 15px;}
+.container-fluid {
+  padding: 30px;
+  padding-bottom: 70px;
+}
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: darkgrey;
+  color: black;
+}
+
+p {
+  border: 10px;
+  border-radius: 5px;
+}
+
