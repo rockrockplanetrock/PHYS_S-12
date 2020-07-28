@@ -45,79 +45,18 @@
 <h2>Kinetic Sculpture</h2> <br> 
 
 <p>I was inspired and amused by the tiny plastic hands I keep finding around my studio and decided to implement them for my kinetic sculpture. Using a Polou 6V brushed DC micromotor and a potentiometer with my Adafruit Metro board, I created the <b>High Five Mill</b> for all of one's needs for validation. First, I got a <i>hand</i>-le on my circuit using one hand on the motor and another on the potentiometer knob (just for fun). I used this dog statue to assess how well I could pet a target.  
-<iframe width="640" height="480" src="petthedog.mp4" frameborder="0" allowfullscreen></iframe> </p>
+<img src="./petthedog.GIF"> 
+</p>
 
 <p>Here's the associated Arduino program for this motor circuit.
-<pre><code class="language-arduino" style="width:50%">
-/*
- * This is a custom function to drive Motor A
- * inputs: direction (L/R), duration (int) 
- * outputs: motor control
- */
-void motorA(char d, int t) {
-  if(d =='R'){
-    digitalWrite(A1B, HIGH); 
-  } else if (d =='L'){
-    digitalWrite(A1B, LOW);    
-  }
-
-  digitalWrite(A1A, HIGH);  // turn motor ON
-  delay(t); // allow motor to run for specified time
- 
-  digitalWrite(A1A, LOW); // turn motor OFF
-  digitalWrite(A1B, LOW);    
-}
-Then we can call this function from our main loop() function. Putting it all together looks like this:
-
-
-const int A1A = 3;  // define pin 3 for A-1A
-const int A1B = 4;  // define pin 4 for A-1B
-
-void setup() {
-  pinMode(A1A, OUTPUT); // specify these pins as outputs
-  pinMode(A1B, OUTPUT);    
-}
-
-void loop() {
-  motorA('L', 2000);  // turn left for 2 seconds
-  delay(1000);      // delay for 1 second
-  motorA('R', 2000);  // turn right for 2 seconds
-  delay(1000);      // delay for 1 second
-}
-
-
-/*
- * This is a custom function to drive Motor A
- * inputs: direction (L/R), duration (int) 
- * outputs: motor control
- */
-void motorA(char d, int t) {
-  if(d =='R'){
-    digitalWrite(A1B, HIGH); 
-  } else if (d =='L'){
-    digitalWrite(A1B, LOW);    
-  }
-
-  digitalWrite(A1A, HIGH);  // turn motor ON
-  delay(t); // allow motor to run for specified time
- 
-  digitalWrite(A1A, LOW); // turn motor OFF
-  digitalWrite(A1B, LOW);    
-}
-</code></pre>
-
+<iframe src=https://create.arduino.cc/editor/sparklellama/be4a05e8-dd44-472e-9cf5-4c9f4a8aa279/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 </p>
 
 <p> Then, I used flexible aluminum wire to create spokes for the hands, which then would be attached to the motor in the center. I created a structural foundtion for the windmill-like sculpture with some cardboard, fed the motor wires through the tube, and then covered everything in electrical tape for a smoother appearance. 
   <br>
   <img src="./handmillguts.jpg" class="img-responsive margin" style="width:30%" alt="Hand Guts"><img src="handmill.jpg" class="img-responsive margin" style="width:30%" alt="Hand Mill">
-  <iframe width="960" height="720" src="highfivemill.mp4" frameborder="0" allowfullscreen></iframe>
-
-
-</div>
-
-
-  
+  <br>
+  <img src="./highfivemill.GIF">
 </div>
 
 </body>
