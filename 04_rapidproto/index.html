@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>PHYS S-12: Intro to Digital Fabrication </title>
@@ -37,18 +37,18 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
   <link href="../style.css" rel="stylesheet">
-  <h4>Class 4: Rapid Prototyping</h4><br> 
+  <h1>Class 4: Rapid Prototyping</h1><br> 
 </head>
 </body>
 
 
-<h3>Kinetic Sculpture</h3> <br> 
+<h2>Kinetic Sculpture</h2> <br> 
 
 <p>I was inspired and amused by the tiny plastic hands I keep finding around my studio and decided to implement them for my kinetic sculpture. Using a Polou 6V brushed DC micromotor and a potentiometer with my Adafruit Metro board, I created the <b>High Five Mill</b> for all of one's needs for validation. First, I got a <i>hand</i>-le on my circuit using one hand on the motor and another on the potentiometer knob (just for fun). I used this dog statue to assess how well I could pet a target.  
 <iframe width="640" height="480" src="petthedog.mp4" frameborder="0" allowfullscreen></iframe> </p>
 
 <p>Here's the associated Arduino program for this motor circuit.
-<pre><code class="language-arduino">
+<pre><code class="language-arduino" style="width:50%">
 /*
  * This is a custom function to drive Motor A
  * inputs: direction (L/R), duration (int) 
@@ -109,8 +109,9 @@ void motorA(char d, int t) {
 </p>
 
 <p> Then, I used flexible aluminum wire to create spokes for the hands, which then would be attached to the motor in the center. I created a structural foundtion for the windmill-like sculpture with some cardboard, fed the motor wires through the tube, and then covered everything in electrical tape for a smoother appearance. 
-<img src="./handmillguts.jpg" class="img-responsive margin" style="width:40%" alt="Hand Guts"><img src="handmill.jpg" class="img-responsive margin" style="width:40%" alt="Hand Mill">
-<iframe width="640" height="480" src="highfivemill.mp4" frameborder="0" allowfullscreen></iframe>
+  <br>
+  <img src="./handmillguts.jpg" class="img-responsive margin" style="width:30%" alt="Hand Guts"><img src="handmill.jpg" class="img-responsive margin" style="width:30%" alt="Hand Mill">
+  <iframe width="960" height="720" src="highfivemill.mp4" frameborder="0" allowfullscreen></iframe>
 
 
 </div>

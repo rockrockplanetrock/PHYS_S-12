@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PHYS S-12: Intro to Digital Fabrication </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid bg-3 text-center">
+  <h1>PHYS S-12: Intro to Digi Fab</h1> 
+  <h4>Anna Rock</h4>
+<br>
+<br>
+<div class="container-fluid bg-3 text-center">
+  <h3>Topics</h3>
+</div>
+
+
+    <footer>Copyright 2020, Anna Rock</footer>
+</body>
+
+</html>
+
+First, I used the exercise here(https://nathanmelenbrink.github.io/intro-dig-fab/09_networking/huzzah1.html) from class 09 where we turned on an LED using the internet on the Huzzah board. Just to backtrack, I downloaded the CP2104 USB Driver () for the Huzzah board () and pasted this URL (ttps://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json) into the Additional Boards Manager field within the ARduino IDE Preferences Menu. Afterwards, I added the "esp32" boards package within the Boards Manager under the Tools Menu in order to subsequently select the Adafruit ESP32 Feather as the board in use.
+
+Next, I opened the native example through File > Examples > Examples for Adafruit ESP32 Feather > WiFi > SimpleWifiServer. In the appropriate field, I replaced the fields specificed with my WiFi SSD and password. I then connected an LED to pin 5 (SCK), uploaded the program, and checked the serial monitor after hitting reset a few times to retrieve my IP address. It is imperative that the WiFi connection is 2.4GHz and not 5G! Once you have the IP address, paste it in your browser and you should see the following page. It will be responsive!
+<img src="./ledonledoff_ip.png">
