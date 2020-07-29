@@ -11,7 +11,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
 <body>
 <style>
@@ -23,6 +22,11 @@
     background-color: yellow;
     text-align: center;
     width:100%;}
+
+  div {
+  padding: 50px;
+  border: 1px solid #00000;
+    }
 </style>
 
 <body>
@@ -41,15 +45,17 @@
 
 
 <h3>Input: Sensors</h3> <br> 
-
+<div>
 <p>After class, I decided to try out the <a href="https://www.adafruit.com/product/3405?gclid=EAIaIQobChMIkOyy7orZ6gIVRdbACh3phQKgEAAYASAAEgKdXvD_BwE">Adafruit HUZZAH32 – ESP32 Feather Board</a> for my sensor tests rather than my reliable <a href="https://www.adafruit.com/product/3505">Adafruit METRO M0 Express</a>. While it took a few minutes to adapt, I think I can now say that I'm mostly comfortable switching between the two microcontrollers. </p>
 
+</div>
 
 <h3>Assignment #1: Measure a Physical Quantity & Calibrate Sensor</h3>
-
+<div>
 <p>I chose <a href="https://www.digikey.com/product-detail/en/ALS-PT204-6C%2FL177/1080-1019-ND/2675510?WT.z_cid=ref_Globalspec_buynow">this phototransistor</a> as my sensor of choice. Specifically, this sensor is a "630nm radial phototransistor" for measuring visible light wavelengths (with peak sensitivity at 630nm). </p>
 
 <p>I set up the circuit as shown using a slightly modified (75ms delay between reads) version of the default AnalogReadSerial program. I used a 1k and 10k Ohm for my first two attempts, but found that the sensor was hardly sensitive enough to measure for this exercise. Thus, I decided my calibration would implement a 330k Ohm resistor.
+  <br>
 <img src="./circuitmeasure.png" class="img-responsive margin" style="width:40%" alt="Circuit Measured"></p>
 
 <p> After creating a light "shield" out of a post-it note as shown below, I used the flashlight on my cellphone to expose the phototransistor to measurable and variable light. Below are my measurements.  When plotting, I played with making the vertical axis scale logarithmic and linear.
@@ -63,10 +69,10 @@
 </p>
 
 <p>Afterwards, I tried a 10M Ohm resistor, but the baseline value without light was 500, so it was too sensitive to be useful.Given my findings, the output signal scale XXX; the relationship between light absorbed and serial monitor output was inverse. It ranged between 0 and 3110 and was most sensitive between 2-8"; I think the measurement is best conducted when the light source is 18" away from the sensor (or less). I attempted to use the map() function, but the results weren't helpful for plotting.</p>
-
+</div>
 
 <h3>Assignment #2 DIY Sensor Construction + Calibration</h3>
-
+<div>
 <p>First, I made a test sensor using velostat with two small pieces of copper tape adhered to each side of the velostat(without making contact with one another). I then sandwiched the two copper pieces and velostat between some green packing foam with hot glue. I attached alligator clips to the distal end of both copper pieces to connect one to GND and the other to A0. The analog pin A0 functioned here as a PULLUP because it sent out voltage. connected one to GND pieces of copperof the velostat with alligator clips connected to each.  I used the Velostat sensor documentation and diagram below found <a href="https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15-barkh22g/project-1-touchable-canvas/velostat-explorations">here.</a></p>
 
 <img src="./velostatsammich.jpg">
@@ -79,7 +85,9 @@
   <img src="./velostat2.jpg">
   <img src="./fullvelo.jpg">
 </p>
+</div>
 
+<h3>Attempt #2</h3>
 <p> I decided to try something else, as this sensor wasn't working as expected. I had some conductive thread laying about, so I placed a bit on electrical tape, applied it to both sides, and then attached the alligator clips. This also didn't work, so I think there may be something wrong with the velostat perhaps.
 <img src="./velosensorthread.jpg">
 </p>
