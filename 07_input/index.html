@@ -1,5 +1,4 @@
-!DOCTYPE html>
-<html lang="en">
+<<html lang="en">
 <head>
   <title>PHYS S-12: Intro to Digital Fabrication </title>
   <meta charset="utf-8">
@@ -36,7 +35,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
   <link href="../style.css" rel="stylesheet">
-  <h4>Class 7: Sensors</h4><br> 
+  <h2>Class 7: Sensors</h2><br> 
 </head>
 </body>
 
@@ -48,58 +47,42 @@
 
 <h3>Assignment #1: Measure a Physical Quantity & Calibrate Sensor</h3>
 
-I chose <a href="https://www.digikey.com/product-detail/en/ALS-PT204-6C%2FL177/1080-1019-ND/2675510?WT.z_cid=ref_Globalspec_buynow">this phototransistor</a> as my sensor of choice. Specifically, this sensor is a "630nm radial phototransistor" for measuring visible light wavelengths (with peak sensitivity at 630nm). 
+<p>I chose <a href="https://www.digikey.com/product-detail/en/ALS-PT204-6C%2FL177/1080-1019-ND/2675510?WT.z_cid=ref_Globalspec_buynow">this phototransistor</a> as my sensor of choice. Specifically, this sensor is a "630nm radial phototransistor" for measuring visible light wavelengths (with peak sensitivity at 630nm). </p>
 
-I set up the circuit as shown using a slightly modified (75ms delay between reads) version of the default AnalogReadSerial program. I used a 1k and 10k Ohm for my first two attempts, but found that the sensor was hardly sensitive enough to measure for this exercise. Thus, I decided my calibration would implement a 330k Ohm resistor.
-<img src="./circuitmeasure.png" class="img-responsive margin" style="width:40%" alt="Circuit Measured">
- After creating a light "shield" out of a post-it note, I used the flashlight on my cellphone to expose the phototransistor to measurable and variable light. Below are my measurements.  When plotting, I played with making the vertical axis scale logarithmic and linear.
+<p>I set up the circuit as shown using a slightly modified (75ms delay between reads) version of the default AnalogReadSerial program. I used a 1k and 10k Ohm for my first two attempts, but found that the sensor was hardly sensitive enough to measure for this exercise. Thus, I decided my calibration would implement a 330k Ohm resistor.
+<img src="./circuitmeasure.png" class="img-responsive margin" style="width:40%" alt="Circuit Measured"></p>
 
+<p> After creating a light "shield" out of a post-it note as shown below, I used the flashlight on my cellphone to expose the phototransistor to measurable and variable light. Below are my measurements.  When plotting, I played with making the vertical axis scale logarithmic and linear.
+<img src="./photosensor.jpg" class="img-responsive margin" style="width:40%" alt="Photoresistor">
+<br>  
 <img src="./tabchart.png" class="img-responsive margin" style="width:40%" alt="Tabulated Values">
+<br>
 <img src="./330kohm.png" class="img-responsive margin" style="width:40%" alt="330k Ohm Graph 1">
 <img src="./330kohm2.png" class="img-responsive margin" style="width:40%" alt="330K Ohm Graph 2">
+<br>
+</p>
 
 <p>Afterwards, I tried a 10M Ohm resistor, but the baseline value without light was 500, so it was too sensitive to be useful.Given my findings, the output signal scale XXX; the relationship between light absorbed and serial monitor output was inverse. It ranged between 0 and 3110 and was most sensitive between 2-8"; I think the measurement is best conducted when the light source is 18" away from the sensor (or less). I attempted to use the map() function, but the results weren't helpful for plotting.</p>
 
 
 <h3>Assignment #2 DIY Sensor Construction + Calibration</h3>
 
-<p>First, I made a test sensor using velostat with two small pieces of copper tape adhered to each side of the velostat(without making contact). I attached alligator clips to the distal end of both copper pieces to connect one to GND and the other to A0. The analog pin A0 functioned here as a PULLUP because it sent out voltage. connected one to GND pieces of copperof the velostat with alligator clips connected to each. </p>
+<p>First, I made a test sensor using velostat with two small pieces of copper tape adhered to each side of the velostat(without making contact with one another). I then sandwiched the two copper pieces and velostat between some green packing foam with hot glue. I attached alligator clips to the distal end of both copper pieces to connect one to GND and the other to A0. The analog pin A0 functioned here as a PULLUP because it sent out voltage. connected one to GND pieces of copperof the velostat with alligator clips connected to each.  I used the Velostat sensor documentation and diagram below found <a href="https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15-barkh22g/project-1-touchable-canvas/velostat-explorations">here.</a></p>
 
-<img src="https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15-barkh22g/_/rsrc/1470337933918/project-1-touchable-canvas/velostat-explorations/Zone%20Wiring.jpg">
+<img src="./velostatsammich.jpg">
 
+<p><iframe src=https://create.arduino.cc/editor/sparklellama/be4a05e8-dd44-472e-9cf5-4c9f4a8aa279/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe></p>
 
-(Inspiration here: https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15-barkh22g/project-1-touchable-canvas/velostat-explorations)
-What I did.
-Conductive thread, felt, 
-My Measurements
-Making Sense of it
+<p>I created and set up my sensor as shown, but my results were less than optimal. The serial monitor and plotter did not indicate any changes with applied pressure, as the values hovered around 400.
+  <img src="./velosensor1.gif">
+  <img src="./velostat1.jpg">
+  <img src="./velostat2.jpg">
+  <img src="./fullvelo.jpg">
+</p>
 
-
-
-<p>My Code:
-<pre><code class="language-arduino">
-const int analogInPin = A0;  
-
-// value read from the Velostat
-int sensorValue = 0;        
-
-void setup() {
-  // initialize serial communication
-  Serial.begin(9600);
-  digitalWrite(analogInPin, HIGH);
-
-}
-
-void loop() {
-  // read analog value
-  sensorValue = analogRead(analogInPin);
-
-  // print results
-  Serial.print("sensor = " );
-  Serial.println(sensorValue);
-}
-</code></pre></p>
-
+<p> I decided to try something else, as this sensor wasn't working as expected. I had some conductive thread laying about, so I placed a bit on electrical tape, applied it to both sides, and then attached the alligator clips. This also didn't work, so I think there may be something wrong with the velostat perhaps.
+<img src="./velosensorthread.jpg">
+</p>
 
 </body>
 </html>
