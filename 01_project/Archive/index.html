@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PHYS S-12: Intro to Digital Fabrication </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+  <link href="../style.css" rel="stylesheet">
+</head>
+<body>
+<style>
+  header {
+  background-color: #000;
+  padding: 30px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+  color: yellow;
+  }
+
+  h2 {
+    font-weight: bolder;
+  }
+  h3 {
+    text-align: left;
+    color: black;}
+    font-weight: bold;
+  h4 {
+    text-align: left;
+    color: black;}
+  h5 {  
+    text-align: center;
+  }
+  body {
+    background-color: yellow;
+    width:75%;
+    border: 5px solid black;
+    text-align: center;
+    padding: 10px;
+  }
+  p {
+    text-align: left;
+    border: 5px solid black;
+    padding: 10px;
+  }
+  a {
+    font-weight: bold;
+    }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+    }
+  li {
+  float: left;
+  } 
+li a {
+  display: block;
+  padding: 8px;
+  font-size: 30px;
+  color: white;
+  background-color: white;
+  }
+</style>
+  <div class="container-fluid">
+<header>Final Project Proposal
+  <br> 
+  <br> 
+  <ul>
+  <li><a href="#concept">Initial Concept</a></li>
+  <li><a href="#brainstorm">Further Brainstorming</a></li>
+  <li><a href="#prototyping">Prototyping</a></li>
+  </ul>
+</header> 
+ 
+  <body>
+    <br>
+  <a name="#concept"></a>
+   <h3>Week 1: Initial Musings</h3>
+   <br>
+    <p>I love interactive fashion as a concept. More specifically, I have imagined clothing wearing people and influencing the human's behavior, rather than a person wearing a garment. Likewise, if our internal physiological or psychological states were personified and announced by an article of clothing-- independent of whether the wearer wanted to proclaim their feelings or not--how would that influence our interactions, perceptions, and social conduct?</p>
+
+    <p>As a gift to myself for graduating college, I bought myself Emoki--a lightweight EEG headset that translated the neural signal from a single point electrode to a pair of fluffy ears. [video] My Emoki headset garnered a lot of curious attention from strangers, but I soon learned that wearing my ears in public meant I was quite explicitly wearing my emotions as well. The ear motor output was coded to resemble that of a dog, and thus the focus of my attention was transparent. It was clear to observers whether I was particularly interested, not listening, suspicious, or engaged in a flow state; the vulnerability I experienced was particularly jarring and unexpected.  Here's the IndieGogo campaign video for the (now discontinued) Emoki headset:
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/b7WVBzCCY1s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+  </div>
+</div>
+
+<h4>Sensing Stress Responses by Skin Conductance</h4>
+  <p>In the many years spent neuroscience labs, I have been particularly interested in studying stress and its neuroendocrine influences on the brain and behavior. In human studies, many researchers observe changes in subjects' skin conductance (also known as Galvanic Skin Response (GSR) by measuring relative changes in sweat gland activity from two points on the hand. Increased conductance between electrodes is indicative of heighted emotional arousal or a stress response. 
+
+  Students at the MIT Media lab produced a skin conductance measuring glove called the Galvactivator that glows when a change occurs. Based on their <a href='https://www.media.mit.edu/galvactivator/faq.html'>FAQ</a>, it seems like making a similar sensor wouldn't be too hard! 
+
+  <img src='http://affect.media.mit.edu/projectpages/handwave/galvactivator-adc.jpg'> Definitely check out their <a href='https://www.media.mit.edu/galvactivator/movie.html'><b>commercial!</b></a>
+
+  <p>I also found a few tutorials (<a href='https://thomaskosch.com/index.php/2017/12/17/galvanic-skin-response-powered-by-arduino/'><b>1</b></a>, <a href='https://wiki.seeedstudio.com/Grove-GSR_Sensor'><b>2</b></a>) using a $10 GSR sensor and an Arduino, so this seems quite feasible.<img src='https://files.seeedstudio.com/wiki/Grove-GSR_Sensor/img/GSR.jpg'> </p>
+</p>
+
+<h4> Putting It All Together </h4>
+  <p>As of this moment, I want to make a wearable electronic that changes when the wearer is stressed, based on skin conductance and heart rate. I think a spiked mask or Elizabethean collar may be in the works, but here are a few images I gathered for inspiration.
+<div class="row">
+  <div class="col-md-3">
+    <img src="https://ichef.bbci.co.uk/news/445/media/images/67906000/jpg/_67906851_67906850.jpg" class="img-responsive margin" style="width:100%" alt="Maiko Takeda, Royal College of Art"> 
+    <a href='https://www.bbc.com/news/in-pictures-22728190'>Maiko Takeda, Royal College of Art Fashion Show</a>
+  </div>
+  
+  <div class="col-md-3">
+    <img src="./etsyheadpiece.jpg" class="img-responsive margin" style="width:100%" alt="Etsy"><a href='https://www.etsy.com/listing/558386269/spiked-knight-mask-or-headpiece'>Spiked Knight Mask by Marianna Harutunian on Etsy</a>
+  </div>
+
+  <div class="col-md-3"> 
+  <img src="./keelyhunter.jpg" class="img-responsive margin" style="width:100%" alt="Keely Hunter"> 
+  <br>
+  <br> PMMA/laser cut headpiece by <a href="http://www.keelyhunter.com/">Keely Hunter</a>
+  </div
+<br>
+
+<a name="#brainstorm"></a>
+<h3>Braintorming from Class 05</h3>
+<p>I have been pondering my design for the final project and how I wish to create moving spike projections a lot.  I decided to see if I could derive inspiration from others on <a href="https://www.thingiverse.com/">Thingiverse</a> and <a href="https://www.grabcad.com/"> GrabCad</a> by searching "spikes". I came across the following models, and it seems as though I'm going to have to ruminate on crystals and sea urchins to produce my design. I'm thinking that motion will be created from nitinol (muscle wire) or perhaps strings, but I need to sketch a little more to make sense of my design.
+
+<div class="col-md-4">
+  <a href="https://www.thingiverse.com/thing:1392175"> <img src="./seaurchin.png" class="img-responsive margin" style="width:100%"></a>
+  <a href="https://www.thingiverse.com/thing:262494">
+    <img src="./cyberpunk.png" class="img-responsive margin" style="width:100%"></a>
+  <a href="https://www.thingiverse.com/thing:293796">
+    <img src="./crystalspikes.png" class="img-responsive margin" style="width:100%"></a>
+</div>
+<h3>Sketches of my Stress Collar from 07-11-20</h3>
+  <img src="./sketch.jpg" class="img-responsive margin" style="width:100%>
+</div>
+</body>
+</body>
+</html>
+
+
+
