@@ -42,22 +42,64 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
   <link href="../style.css" rel="stylesheet">
-  <h2>Class 7: Sensors</h2><br> 
+  <h2>Final Project</h2><br> 
 </head>
 </body>
 
 
-#Inspiration
-#Fabrication Process
-#Finished Project
+<h1>Inspiration + Planning</h1>
+<h3>Initial Musings from Week 1</h3>
+   <br>
+    <p>I love interactive fashion as a concept. More specifically, I have imagined clothing wearing people and influencing the human's behavior, rather than a person wearing a garment. Likewise, if our internal physiological or psychological states were personified and announced by an article of clothing-- independent of whether the wearer wanted to proclaim their feelings or not--how would that influence our interactions, perceptions, and social conduct?</p>
 
-#Inspiration
-*copy-paste from other pages*
+    <p>As a gift to myself for graduating college, I bought myself Emoki--a lightweight EEG headset that translated the neural signal from a single point electrode to a pair of fluffy ears. [video] My Emoki headset garnered a lot of curious attention from strangers, but I soon learned that wearing my ears in public meant I was quite explicitly wearing my emotions as well. The ear motor output was coded to resemble that of a dog, and thus the focus of my attention was transparent. It was clear to observers whether I was particularly interested, not listening, suspicious, or engaged in a flow state; the vulnerability I experienced was particularly jarring and unexpected.  Here's the IndieGogo campaign video for the (now discontinued) Emoki headset:
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/b7WVBzCCY1s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+  </div>
+</div>
 
-#FabPro
+<h4>Sensing Stress Responses by Skin Conductance</h4>
+  <p>In the many years spent neuroscience labs, I have been particularly interested in studying stress and its neuroendocrine influences on the brain and behavior. In human studies, many researchers observe changes in subjects' skin conductance (also known as Galvanic Skin Response (GSR) by measuring relative changes in sweat gland activity from two points on the hand. Increased conductance between electrodes is indicative of heighted emotional arousal or a stress response. </p>
+<br>
+  <p>Students at the MIT Media lab produced a skin conductance measuring glove called the Galvactivator that glows when a change occurs. Based on their <a href='https://www.media.mit.edu/galvactivator/faq.html'>FAQ</a>, it seems like making a similar sensor wouldn't be too hard! 
 
-1. 3D Modelling + Files
-2. gather materials (list)
+  <img src='http://affect.media.mit.edu/projectpages/handwave/galvactivator-adc.jpg'> Definitely check out their <a href='https://www.media.mit.edu/galvactivator/movie.html'><b>commercial!</b></a>
+
+  <p>I also found a few tutorials (<a href='https://thomaskosch.com/index.php/2017/12/17/galvanic-skin-response-powered-by-arduino/'><b>1</b></a>, <a href='https://wiki.seeedstudio.com/Grove-GSR_Sensor'><b>2</b></a>) using a $10 GSR sensor and an Arduino, so this seems quite feasible.<img src='https://files.seeedstudio.com/wiki/Grove-GSR_Sensor/img/GSR.jpg'> </p>
+</p>
+
+<h3> Putting It All Together </h3>
+  <p>As of this moment, I want to make a wearable electronic that changes when the wearer is stressed, based on skin conductance and heart rate. I think a spiked mask or Elizabethean collar may be in the works, but here are a few images I gathered for inspiration.
+<div class="row">
+  <div class="col-md-3">
+    <img src="https://ichef.bbci.co.uk/news/445/media/images/67906000/jpg/_67906851_67906850.jpg" class="img-responsive margin" style="width:100%" alt="Maiko Takeda, Royal College of Art"> 
+    <a href='https://www.bbc.com/news/in-pictures-22728190'>Maiko Takeda, Royal College of Art Fashion Show</a>
+  </div>
+  
+  <div class="col-md-3">
+    <img src="./etsyheadpiece.jpg" class="img-responsive margin" style="width:100%" alt="Etsy"><a href='https://www.etsy.com/listing/558386269/spiked-knight-mask-or-headpiece'>Spiked Knight Mask by Marianna Harutunian on Etsy</a>
+  </div>
+
+  <div class="col-md-3"> 
+  <img src="./keelyhunter.jpg" class="img-responsive margin" style="width:100%" alt="Keely Hunter"> 
+  <br>
+  <br> PMMA/laser cut headpiece by <a href="http://www.keelyhunter.com/">Keely Hunter</a>
+  </div
+<br>
+
+<a name="#brainstorm"></a>
+<h3>Braintorming from Class 05</h3>
+<p>I have been pondering my design for the final project and how I wish to create moving spike projections a lot.  I decided to see if I could derive inspiration from others on <a href="https://www.thingiverse.com/">Thingiverse</a> and <a href="https://www.grabcad.com/"> GrabCad</a> by searching "spikes". I came across the following models, and it seems as though I'm going to have to ruminate on crystals and sea urchins to produce my design. I'm thinking that motion will be created from nitinol (muscle wire) or perhaps strings, but I need to sketch a little more to make sense of my design.
+
+<div class="col-md-4">
+  <a href="https://www.thingiverse.com/thing:1392175"> <img src="./seaurchin.png" class="img-responsive margin" style="width:100%"></a>
+  <a href="https://www.thingiverse.com/thing:262494">
+    <img src="./cyberpunk.png" class="img-responsive margin" style="width:100%"></a>
+  <a href="https://www.thingiverse.com/thing:293796">
+    <img src="./crystalspikes.png" class="img-responsive margin" style="width:100%"></a>
+</div>
+<h3>Sketches of my Stress Collar from 07-11-20</h3>
+  <img src="./postitideas.jpg" class="img-responsive margin" style="width:100%>
+</div>
 
 <h1>Fabrication Process</h1>
 <h2>3D Models Constructed in Fusion 360</h2>
@@ -89,16 +131,22 @@
 <ul>
   <li>2 x <a href="https://www.omc-stepperonline.com/nema-17-bipolar-1-8deg-26ncm-36-8oz-in-0-4a-12v-42x42x34mm-4-wires.html">Nema 17 Bipolar 1.8deg 26Ncm (36.8oz.in) 0.4A 12V 42x42x34mm 4 Wires</a></li>
   <li>2 x <a href="https://www.mpja.com/L9110-H-Bridge-Power-Driver-Dual-Channel-for-Arduino/productinfo/31596%20MP/">L9110 H Bridge Power Driver</a></li> 
+  <img src="./sc_hbridge.jpg" style="width:20%">
+  <img src="./hbridgetangle.jpg" style="width:20%"">
   <li>1 x  <a href="https://www.adafruit.com/product/3505?gclid=EAIaIQobChMIk6iKn_SX6gIVF8DICh0tzwA4EAAYASAAEgJm7vD_BwE">Adafruit Metro M0 Express</a></li>
+  <img src="./sc_metroboard1.jpg" style="width:20%">
+<img src="./sc_metroboard2.jpg" style="width:20%">
 <br> OR
   <li>2 x <a href="https://www.adafruit.com/product/3591">Adafruit HUZZAH32 - ESP32 Feather Board</a></li>
   <li>4 x <a href="https://www.digikey.com/product-detail/en/century-spring-corp/TA-2259CS/2343-TA-2259CS-ND/11663306">3.5" Conical Springs from Century Spring Corp.</a></li>
   <li>1 x <a href="https://www.amazon.com/seeed-studio-Seeedstudio-Grove-sensor/dp/B012TNYDE4">seeed studio Grove GSR Sensor</a></li>
+  <img src="./sc_gsrshield" style="width:20%">
+<img src="./sc_handsensor.jpg" style="width:20">
   <li>2 x plastic spools to put on motor shafts </li>
   <li><b>Assorted supplies + tools:</b> electrical tape, thick vinyl, grommets, scalpel, leather punch, belt buckle, nylon fishing line, heavy duty thread, wires (F:F, M:M), breadboard, 5V USB power bank + cord, Dremel</li></ul>
 <br>
 <br>
-<h2>Which Board: Metro M0 Express or HUZZAH32?</h2>
+<h3>Which Board: Metro M0 Express or HUZZAH32?</h3>
 <p>I began this project using two Huzzah32 boards, as I was so excited about the board-to-board direct communication facilitated by the ESP-NOW protocol. Here are the resources I found most helpful for ESP32 connection.</p>
 <br>
   <ul>
@@ -106,11 +154,17 @@
     <li>https://nathanmelenbrink.github.io/intro-dig-fab/09_networking/huzzah1b.html</li>
   </ul>
 <br>
-<h2>GSR Sensor</h2>
-<a href="http://www.cwwang.com/2008/04/13/gsr-reader/">Che-Wei Wang's GSR project</a> was incredibly interesting, but he revealed that the interpretation of the sensor data would require Processing/p5* to compute.
+<h3>Measuring Stress + Thinking about the GSR Signals</h2>
+<p>Stress can be measured by obtaining the galvanic skin response (see <a href="https://en.wikipedia.org/wiki/Electrodermal_activity">Wikipedia</a>) with dermal electrodes. This phenomenon is the basis of the polygraph test (also known as the lie detector) and works by comparing the difference between two points on the skin, which vary in conductivity with sweat (an output of the stress response or general sympathetic tone).</p>
+<br>
+<p>According to the <a href="https://wiki.seeedstudio.com/Grove-GSR_Sensor/">GSR sensor manufacturer seeed</a>, the sensor must be calibrated by adjusting a screw on the board until the baseline serial reading is 512. Unfortunately, I found this impossible for the first and second sensors I bought.</p>
+<p>I found that the reading is either 100-0, 2300+, or 1700/1800 initially and drifts randomly over time. I troubleshooted this by equating a signal (indicating a stress state) with a negative slope or comparison of binned y-values, but this did not work. <a href="http://www.cwwang.com/2008/04/13/gsr-reader/">Che-Wei Wang's GSR project</a> was incredibly interesting, but he revealed that the interpretation of the sensor data would require Processing/p5* to compute.</p>
+<p>I knew that signal processing with with a bandpass filter seemed inevitable and unnecessarily complicated, so I also tried to implement linear regression as a work around. Through iterative observation, I realized that a signal during the first 5-10 minutes or so of wearing the sensors could be any value less than 500 or 600, so I stuck with that as the physical fabrication required my time.</p>
 
-BEST:http://produceconsumerobot.com/truth/
+<img src="./gsr_truthsensor.png" style="width:40%">
 
+<p> The <a href="http://produceconsumerobot.com/truth">Truth Wristband kit</a> and documentation has an excellent page about GSR as a lie detector that is work a look./</p>
+<img src="http://produceconsumerobot.com/truth/content/MakeArticleFig01_02.png">
 
 <h2>Code</h2>
 <p>My code was compiled using the codes (<a href="https://roberthart56.github.io/SCFAB/SC_lab/Sensors/average.txt">1,</a> <a href="https://nathanmelenbrink.github.io/intro-dig-fab/10_machines/serial_setpoint_1.txt">2</a>) from the course website and inspired by the work of others GSR sensors (linked above). </p>
@@ -127,35 +181,26 @@ BEST:http://produceconsumerobot.com/truth/
 <h2>Methodology, Testing, + Wiring</h2>
 <p>I wanted to have both motors running simultaneously, but for safety reasons I staggered them. If I proceeded as initially planned, I would have consulted <a href="https://www.arduino.cc/en/tutorial/BlinkWithoutDelay">BlinkWithoutDelay</a> or <a href="https://forum.arduino.cc/index.php?topic=93706.0">this helpful forum. The latter resource inspired me to have each motor run fewer steps per loop interchangably. Upon testing this, I found this to be least hazardous. </p>
 <br>
-<p>According to the <a href="https://wiki.seeedstudio.com/Grove-GSR_Sensor/">GSR sensor manufacturer seeed</a>, the sensor must be calibrated by adjusting a screw on the board until the baseline serial reading is 512. Unfortunately, I found this impossible for the first and second sensors I bought.
-I found that the reading is either 100-0, 2300+, or 1700/1800 initially and drifts randomly over time. I troubleshooted this by equating a signal (indicating a stress state) with a negative slope or comparison of binned y-values, but this did not work. I knew that signal processing with with a bandpass filter seemed inevitable and unnecessarily complicated, so I also tried to implement linear regression as a work around. Through iterative observation, I realized that a signal during the first 5-10 minutes or so of wearing the sensors could be any value less than 500 or 600, so I stuck with that as the physical fabrication required my time.
 
-
-https://en.wikipedia.org/wiki/Electrodermal_activity
-http://produceconsumerobot.com/truth/</p>
 
 <h2>Construction</h2>
 <img src="./sc_3dprintedbase.jpg">
 <img src="./sc_attachcollar.jpg">
+<img src="./sc_sewnon.jpg" style="width:40%">
 
-<img src="./petra.jpg" style="width:40%>
-<img src="./postitideas.jpg" style="width:40%>
-<img src="./sc_back1.jpg" style="width:40%>
-<img src="./sc_backlong.jpg" style="width:40%>
-<img src="./sc_breadboard.jpg" style="width:40%>
-<img src="./sc_gsrshield" style="width:40%>
-<img src="./sc_handsensor.jpg" style="width:40%>
-<img src="./sc_hbridge.jpg" style="width:40%>
-<img src="./hbridgetangle.jpg" style="width:40%>
-<img src="./sc_leatherpunch.jpg" style="width:40%>
-<img src="./sc_metroboard1.jpg" style="width:40%>
-<img src="./sc_metroboard2.jpg" style="width:40%>
-<img src="./sc_portrait1.jpg" style="width:40%>
-<img src="./sc_portrait2.jpg" style="width:40%>
-<img src="./sc_selfiewide.jpg" style="width:40%>
-<img src="./sc_sewnon.jpg" style="width:40%>
-<img src="./sc_springs.jpg" style="width:40%>
-<img src="./gsr_truthsensor.png" style="width:40%>
+<img src="./petra.jpg" style="width:40%">
+
+<img src="./sc_back1.jpg" style="width:40%">
+<img src="./sc_backlong.jpg" style="width:40%">
+
+<img src="./sc_breadboard.jpg" style="width:40%">
+<img src="./sc_leatherpunch.jpg" style="width:20%">
+<img src="./sc_springs.jpg" style="width:40%">
+
+<img src="./sc_portrait1.jpg" style="width:40%">
+<img src="./sc_portrait2.jpg" style="width:40%">
+<img src="./sc_selfiewide.jpg" style="width:40%">
+
 
 
 <h1>Final Project</h1>
