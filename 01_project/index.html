@@ -46,12 +46,7 @@
 </head>
 </body>
 
-I downloaded the <a href="http://www.airspayce.com/mikem/arduino/AccelStepper/">AccelStepper library</a> from the Arduino IDE Library Manager. 
-Example 2: https://www.makerguides.com/l298n-stepper-motor-arduino-tutorial/
-Reasons why I'm using a stepper "Stepper motors have a number of benefits. They are cheap and easy to use. When there is no current send to the motor, the steppers firmly hold their position. Stepper motors can also rotate without limits and change direction based on the polarity provided.:
 
-
-Talking about H-bridges https://www.instructables.com/id/Controlling-a-Stepper-Motor-with-an-Arduino/
 #Inspiration
 #Fabrication Process
 #Finished Project
@@ -133,14 +128,48 @@ BEST:http://produceconsumerobot.com/truth/
 <p>I wanted to have both motors running simultaneously, but for safety reasons I staggered them. If I proceeded as initially planned, I would have consulted <a href="https://www.arduino.cc/en/tutorial/BlinkWithoutDelay">BlinkWithoutDelay</a> or <a href="https://forum.arduino.cc/index.php?topic=93706.0">this helpful forum. The latter resource inspired me to have each motor run fewer steps per loop interchangably. Upon testing this, I found this to be least hazardous. </p>
 <br>
 <p>According to the <a href="https://wiki.seeedstudio.com/Grove-GSR_Sensor/">GSR sensor manufacturer seeed</a>, the sensor must be calibrated by adjusting a screw on the board until the baseline serial reading is 512. Unfortunately, I found this impossible for the first and second sensors I bought.
-I found that the reading is either 100-0, 2300+, or 1700/1800 initially and drifts randomly over time. 
+I found that the reading is either 100-0, 2300+, or 1700/1800 initially and drifts randomly over time. I troubleshooted this by equating a signal (indicating a stress state) with a negative slope or comparison of binned y-values, but this did not work. I knew that signal processing with with a bandpass filter seemed inevitable and unnecessarily complicated, so I also tried to implement linear regression as a work around. Through iterative observation, I realized that a signal during the first 5-10 minutes or so of wearing the sensors could be any value less than 500 or 600, so I stuck with that as the physical fabrication required my time.
+
+
 https://en.wikipedia.org/wiki/Electrodermal_activity
 http://produceconsumerobot.com/truth/</p>
 
 <h2>Construction</h2>
+<img src="./sc_3dprintedbase.jpg">
+<img src="./sc_attachcollar.jpg">
+
+<img src="./petra.jpg">
+<img src="./postitideas.jpg">
+<img src="./sc_back1.jpg">
+<img src="./sc_backlong.jpg">
+<img src="./sc_breadboard.jpg">
+<img src="./sc_gsrshield">
+<img src="./sc_handsensor.jpg">
+<img src="./sc_hbridge.jpg">
+<img src="./hbridgetangle.jpg">
+<img src="./sc_leatherpunch.jpg">
+<img src="./sc_metroboard1.jpg">
+<img src="./sc_metroboard2.jpg">
+<img src="./sc_portrait1.jpg">
+<img src="./sc_portrait2.jpg">
+<img src="./sc_selfiewide.jpg">
+<img src="./sc_sewnon.jpg">
+<img src="./sc_springs.jpg">
+<img src="./gsr_truthsensor.png">
+<img src="./
+<img src="./
+<img src="./
+<img src="./
+<img src="./
 
 <h1>Final Project</h1>
 <p>Blah blah blah</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Fm5Zi0R7mf0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Improvements to be made
 
+I downloaded the <a href="http://www.airspayce.com/mikem/arduino/AccelStepper/">AccelStepper library</a> from the Arduino IDE Library Manager. 
+Example 2: https://www.makerguides.com/l298n-stepper-motor-arduino-tutorial/
+Reasons why I'm using a stepper "Stepper motors have a number of benefits. They are cheap and easy to use. When there is no current send to the motor, the steppers firmly hold their position. Stepper motors can also rotate without limits and change direction based on the polarity provided.:
+
+
+Talking about H-bridges https://www.instructables.com/id/Controlling-a-Stepper-Motor-with-an-Arduino/
