@@ -90,39 +90,20 @@
 
 
 <h3>Retrieving MAC Address from my Huzzah!</h3>
-<p> I used the code below found on <a href="">Random Nerd Tutorials</a> to do this. After you upload this code, open the serial monitor, change the Baud rate to 115200 and then reset the board.</p>
-<br
-<pre><code class="language-arduino">
-  // Complete Instructions to Get and Change ESP MAC Address: https://RandomNerdTutorials.com/get-change-esp32-esp8266-mac-address-arduino/
+<p> I used the code found on <a href="https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/">Random Nerd Tutorials</a> to do this (see "ESP32: Getting Board MAC Address"). After you upload this code, open the serial monitor, change the Baud rate to 115200 and then reset the board.</p>
+<br>
+<br>
+<p> After trying and trying, I found out that the upload issues I was encountering was due to a USB cable issue.
+<br>
+"A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header"
+<br>
+ Apparently it wasn't an ideal data transfer wire, just a microUSB to USB charging wire. Oops! I thank <a href="https://github.com/espressif/arduino-esp32/issues/333">this GitHub</a> for helping me problem solve this, as it took hours! </p>
+<br>
+<p> Once I had it, I played with variations of<a href="https://roberthart56.github.io/SCFAB/SC_lab/Networking/networking/ESP32_NOW/rec01_may28.txt">this code</a> using an LED, a potentiometer, and two Huzzahs. </p>
+<br>
+<br>
 
-#include "WiFi.h"
- 
-void setup(){
-  Serial.begin(115200);
-  WiFi.mode(WIFI_MODE_STA);
-  Serial.println(WiFi.macAddress());
-}
- 
-void loop(){
-
-}
-  </code></pre> </p>
-
-  24:62:AB:D2:8D:68 dot receiver
- 24:62:AB:D2:76:2C no dot
-
-
-
-
-
-IT WAS A CABLE ISSUE LOL
-A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header
-ty to https://github.com/espressif/arduino-esp32/issues/333
-
-
-this code references the motor driver, so i am confused
-https://roberthart56.github.io/SCFAB/SC_lab/Networking/networking/ESP32_NOW/rec01_may28.txt
-
+<h2>GSR Sensor Time!</h2>
 Here's the code for the sending ESP32 (which is attached to my GSR sensor). Likewise, here is also the code for the receiving ESP32 (beneath the first bit). I will be looking to the serial monitor to see if my sensor output is getting properly transmitted. 
 <iframe src=https://create.arduino.cc/editor/sparklellama/e6e2e157-41ee-44e2-963b-fb527aeed409/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
